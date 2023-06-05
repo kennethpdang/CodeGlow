@@ -28,5 +28,9 @@
         "matches": ["<all_urls>"],
         "js": ["content.js"]
       }
-    ]
+    ],
+    "background": {
+      "scripts": ["js/background.js", "js/options.js"],
+      "persistent": true
+    }
   }
