@@ -4,3 +4,7 @@ that doesn't appear to exists, which can style textual characters similar to how
 
 ## How Does it Work?
 This code uses the Chrome Extensions API which are given here: https://developer.chrome.com/docs/extensions/reference/.
+
+## File Structure:
+
+##
