@@ -1,5 +1,5 @@
 var defaultOptions = {
-    enabled: true
+    enabled: true // Is extension currently on?
 };
 
 function getOption(optionName) {
@@ -20,10 +20,10 @@ function optionAllowed(optionName) {
     return optionName in defaultOptions
 }
 
-function setOption(option_name, value) {
-    if (optionAllowed(option_name)) {
-        localStorage[option_name] = JSON.stringify(value);
+function setOption(optionName, value) {
+    if (optionAllowed(optionName)) {
+        localStorage[optionName] = JSON.stringify(value);
     } else {
-        throw "Option " + option_name + " not supported";
+        throw "Option " + optionName + " not supported";
     }
   }
