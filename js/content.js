@@ -1,6 +1,7 @@
-// File Description: This 
-chrome.runtime.sendMessage({}, function() {
-    if(JSON.prase(response.answer)) {
-        
+chrome.runtime.sendMessage({method: "shouldHighlight", host: location.host},
+  function(response){
+    if (JSON.parse(response.answer)) {
+      console.log(location.host)
     }
-})
+  }
+);

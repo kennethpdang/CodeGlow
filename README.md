@@ -15,3 +15,10 @@ This code uses the Chrome Extensions API which are given here: https://developer
 ```
 
 Would make all javascript functions in `📜 background.js` available to `📜 options.js` and vice versa.
+
+## Schematic of Code:
+Our `📜 content.js` file will communicate to our background scripts in the `📜 background.js` and `📜 options.js` file by using the Chrome Runtime API. We send an object to the background scripts and check the response of the object to note whether we should apply a syntax highlight to the current page. Below is a short schematic.
+
+<div align="center" style = "width: 100%">
+  <img src="images/ReadMe%20Explainer%201.png">
+</div>
