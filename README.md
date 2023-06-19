@@ -43,11 +43,11 @@ end
 style contentjs fill:#ffffff,stroke-width:2px,stroke:#000000
 style backgroundjs fill:#ffffff,stroke-width:2px,stroke:#000000
 
-contentjsText["\```
+contentjsText["```
 chrome.runtime.sendMessage(Object, function(response) {
  ⋮
 }
-\```"]
+```"]
 
 backgroundjsText["\```
 chrome.runtime.onMessage.addListener() {
