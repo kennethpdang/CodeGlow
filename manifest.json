@@ -33,5 +33,5 @@
     "scripts": ["js/background_script/background.js", "js/background_script/options.js"],
     "persistent": true
   },
-  "web_accessible_resources" : ["js/pageScript.js"]
+  "web_accessible_resources" : ["js/prism/prism.css", "js/prism/prism.js"]
 }

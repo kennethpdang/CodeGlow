@@ -28,3 +28,5 @@ Our `📜 content.js` file will communicate to our background scripts in the `�
 
 ## Miscellaneous
 Note, if you perform a `console.log()` from the `📜 background.js` scripts, then the log will be outputted in the background page, which you have to access by going to Chrome menu ⋮ → Extensions → Manage Extensions → Inspect Views (Background Page). However performing a `console.log()` from the `📜 content.js` scripts will log a result directly in the page the script is being applied to.
+
+Note, the scripts you are trying to access from the downloaded prism files: that is `prism.css` and `prism.js` must be included in the `"web_accessible_resources"` property of the manifest file or they will not load!
