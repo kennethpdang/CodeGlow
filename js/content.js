@@ -20,7 +20,7 @@ chrome.runtime.sendMessage({method: "shouldHighlight", host: location.host},
 
       const highlightedText = allTextOnScreen.replace(regex, (match, p1) => {
         const indentedCode = p1.split("<br>").map(line => "  " + line).join("\n");
-        return `<pre><code class = "language-javascript"> ${indentedCode} </code></pre>`;
+        return `<pre style = "padding: 0px; margin: 0px; background-color: #2e3856;"><code class = "language-javascript"> ${indentedCode} </code></pre>`;
       });
 
       document.body.innerHTML = highlightedText;
