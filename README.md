@@ -30,3 +30,41 @@ Our `📜 content.js` file will communicate to our background scripts in the `�
 Note, if you perform a `console.log()` from the `📜 background.js` scripts, then the log will be outputted in the background page, which you have to access by going to Chrome menu ⋮ → Extensions → Manage Extensions → Inspect Views (Background Page). However performing a `console.log()` from the `📜 content.js` scripts will log a result directly in the page the script is being applied to.
 
 Note, the scripts you are trying to access from the downloaded prism files: that is `prism.css` and `prism.js` must be included in the `"web_accessible_resources"` property of the manifest file or they will not load!
+
+flowchart TB
+
+subgraph Project
+  style container fill:#ffffff,stroke-width:2px,stroke:#000000
+  contentjs((content.js))
+  backgroundjs((background.js))
+end
+
+style contentjs fill:#ffffff,stroke-width:2px,stroke:#000000
+style backgroundjs fill:#ffffff,stroke-width:2px,stroke:#000000
+
+contentjsText["```
+chrome.runtime.sendMessage(Object, function(response) {
+ ⋮
+}
+```"]
+
+backgroundjsText["```
+chrome.runtime.onMessage.addListener() {
+ ⋮
+ sendResponse({...})
+ ⋮
+}
+```"]
+
+subgraph Object
+  style objectBox fill:#ffffff,stroke-width:2px,stroke:#000000
+  objectText["Object"]
+end
+
+style objectBox fill:#ffffff,stroke-width:2px,stroke:#000000
+
+contentjsText --> contentjs
+backgroundjsText --> backgroundjs
+
+contentjs -->|Pass Object| objectText
+objectText -->|Receive Object| backgroundjs
