@@ -49,13 +49,12 @@ chrome.runtime.sendMessage(Object, function(response) {
 }
 ```"]
 
-backgroundjsText["\```
+backgroundjsText["
 chrome.runtime.onMessage.addListener() {
  ⋮
  sendResponse({...})
  ⋮
-}
-\```"]
+}"]
 
 subgraph Object
   style objectBox fill:#ffffff,stroke-width:2px,stroke:#000000
