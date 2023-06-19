@@ -34,38 +34,25 @@ Note, the scripts you are trying to access from the downloaded prism files: that
 ```mermaid
 flowchart TB
 
-subgraph Project
-  style container fill:#ffffff,stroke-width:2px,stroke:#000000
-  contentjs((content.js))
-  backgroundjs((background.js))
-end
+style contentjs fill:#ffffff,stroke-width:2px,stroke:#000000,text-align:center
+style backgroundjs fill:#ffffff,stroke-width:2px,stroke:#000000,text-align:center
 
-style contentjs fill:#ffffff,stroke-width:2px,stroke:#000000,text-align:left
-style backgroundjs fill:#ffffff,stroke-width:2px,stroke:#000000,text-align:left
+contentjs["content.js"]
+backgroundjs["background.js"]
 
-contentjsText["```
+contentjsText["```javascript
 chrome.runtime.sendMessage(Object, function(response) {
- ⋮
-}
+  // code here
+});
 ```"]
 
-backgroundjsText["
-chrome.runtime.onMessage.addListener() {
- ⋮
- sendResponse({...})
- ⋮
-}"]
+backgroundjsText["```javascript
+chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
+  // code here
+  sendResponse({...});
+});
+```"]
 
-subgraph Object
-  style objectBox fill:#ffffff,stroke-width:2px,stroke:#000000
-  objectText["Object"]
-end
-
-style objectBox fill:#ffffff,stroke-width:2px,stroke:#000000
-
-contentjsText --> contentjs
-backgroundjsText --> backgroundjs
-
-contentjs -->|Pass Object| objectText
-objectText -->|Receive Object| backgroundjs
+contentjs --> contentjsText
+backgroundjs --> backgroundjsText
 ```
