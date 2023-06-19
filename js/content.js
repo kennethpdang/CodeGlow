@@ -18,10 +18,9 @@ chrome.runtime.sendMessage({method: "shouldHighlight", host: location.host},
 
       allTextOnScreen = document.body.innerHTML;
 
-      // Replace matched text with styled text
       const highlightedText = allTextOnScreen.replace(regex, (match, p1) => {
-        // Apply red color to the text between triple backticks
-        return `<code class="language-javascript"> ${p1} </code>`;
+        const indentedCode = p1.split("<br>").map(line => "  " + line).join("\n");
+        return `<pre><code class = "language-javascript"> ${indentedCode} </code></pre>`;
       });
 
       document.body.innerHTML = highlightedText;
