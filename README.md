@@ -31,6 +31,7 @@ Note, if you perform a `console.log()` from the `📜 background.js` scripts, th
 
 Note, the scripts you are trying to access from the downloaded prism files: that is `prism.css` and `prism.js` must be included in the `"web_accessible_resources"` property of the manifest file or they will not load!
 
+```mermaid
 flowchart TB
 
 subgraph Project
@@ -68,3 +69,4 @@ backgroundjsText --> backgroundjs
 
 contentjs -->|Pass Object| objectText
 objectText -->|Receive Object| backgroundjs
+```
