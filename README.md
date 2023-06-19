@@ -36,9 +36,7 @@ flowchart TB
 
 style contentjs fill:#ffffff, stroke-width:2px, stroke:#000000, text-align:center, round-corner:20px
 style backgroundjs fill:#ffffff, stroke-width:2px, stroke:#000000, text-align:center, round-corner:20px
-
-contentjs["content.js"]
-backgroundjs["background.js"]
+style backgroundjsText fill: round-corner: 20px
 
 contentjsText["```javascript
 chrome.runtime.sendMessage(Object, function(response) {
