@@ -22,7 +22,6 @@ chrome.browserAction.onClicked.addListener(function(tab) {
     toggleExtensionEnabledState();
 });
 
-// Content page would request this:
 function shouldHighlight(host) {
     if (!getOption('enabled')) {
       return false;

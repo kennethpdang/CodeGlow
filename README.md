@@ -16,13 +16,15 @@ This code uses the Chrome Extensions API which are given here: https://developer
 
 Would make all javascript functions in `📜 background.js` available to `📜 options.js` and vice versa.
 
-## How Does CodeGlow Extension Work?
+## How Does CodeGlow Extension Work (High - Level Overview)?
 The CodeGlow extension work. In addition for the libraries to create a Google extension, the CodeGlow extension uses the Prism JS Library here: https://prismjs.com/. This is a lightweight peice of code. We parse each individual page where the extension is toggled and then we find the characters `<pre>` and `</pre>` and syntax highlight the text of characters between those two.
 
-
 ## Schematic of Code:
-Our `📜 content.js` file will communicate to our background scripts in the `📜 background.js` and `📜 options.js` file by using the Chrome Runtime API. We send an object to the background scripts and check the response of the object to note whether we should apply a syntax highlight to the current page. Below is a short schematic.
+Our `📜 content.js` file will communicate to our background scripts in the `📜 background.js` and `📜 options.js` file by using the Chrome Runtime API. We send an object that contains which function to run and the name of the localhost to the background scripts and check the response of the object to note whether we should apply a syntax highlight to the current page. To do this, we use the `onMessage()`, `sendMessage()`, and `sendResponse()` method of the Chrome Runtime library. Below is a short schematic.
 
 <div align="center" style = "width: 100%">
   <img src="images/ReadMe%20Explainer%201.png">
 </div>
+
+## Miscellaneous
+Note, if you perform a `console.log()` from the `📜 background.js` scripts, then the log will be outputted in the background page, which you have to access by going to Chrome menu ⋮ → Extensions → Manage Extensions → Inspect Views (Background Page). However performing a `console.log()` from the `📜 content.js` scripts will log a result directly in the page the script is being applied to.
