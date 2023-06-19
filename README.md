@@ -34,8 +34,8 @@ Note, the scripts you are trying to access from the downloaded prism files: that
 ```mermaid
 flowchart TB
 
-style contentjs fill:#ffffff, stroke-width:2px, stroke:#000000, text-align:center, round-corner:10px
-style backgroundjs fill:#ffffff, stroke-width:2px, stroke:#000000, text-align:center, round-corner:10px
+style contentjs fill:#ffffff, stroke-width:2px, stroke:#000000, text-align:center, round-corner:20px
+style backgroundjs fill:#ffffff, stroke-width:2px, stroke:#000000, text-align:center, round-corner:20px
 
 contentjs["content.js"]
 backgroundjs["background.js"]
