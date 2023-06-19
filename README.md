@@ -40,8 +40,8 @@ subgraph Project
   backgroundjs((background.js))
 end
 
-style contentjs fill:#ffffff,stroke-width:2px,stroke:#000000
-style backgroundjs fill:#ffffff,stroke-width:2px,stroke:#000000
+style contentjs fill:#ffffff,stroke-width:2px,stroke:#000000,text-align:left
+style backgroundjs fill:#ffffff,stroke-width:2px,stroke:#000000,text-align:left
 
 contentjsText["```
 chrome.runtime.sendMessage(Object, function(response) {
