@@ -30,27 +30,3 @@ Our `📜 content.js` file will communicate to our background scripts in the `�
 Note, if you perform a `console.log()` from the `📜 background.js` scripts, then the log will be outputted in the background page, which you have to access by going to Chrome menu ⋮ → Extensions → Manage Extensions → Inspect Views (Background Page). However performing a `console.log()` from the `📜 content.js` scripts will log a result directly in the page the script is being applied to.
 
 Note, the scripts you are trying to access from the downloaded prism files: that is `prism.css` and `prism.js` must be included in the `"web_accessible_resources"` property of the manifest file or they will not load!
-
-```mermaid
-flowchart TB
-
-style contentjs fill:#ffffff, stroke-width:2px, stroke:#000000, text-align:center, round-corner:20px
-style backgroundjs fill:#ffffff, stroke-width:2px, stroke:#000000, text-align:center, round-corner:20px
-style backgroundjsText fill: round-corner: 20px
-
-contentjsText[``javascript
-chrome.runtime.sendMessage(Object, function(response) {
-  // code here
-});
-``]
-
-backgroundjsText["\```javascript
-chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
-  // code here
-  sendResponse({...});
-});
-\```"]
-
-contentjs --> contentjsText
-backgroundjs --> backgroundjsText
-```
