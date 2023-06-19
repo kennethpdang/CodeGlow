@@ -38,18 +38,18 @@ style contentjs fill:#ffffff, stroke-width:2px, stroke:#000000, text-align:cente
 style backgroundjs fill:#ffffff, stroke-width:2px, stroke:#000000, text-align:center, round-corner:20px
 style backgroundjsText fill: round-corner: 20px
 
-contentjsText["```javascript
+contentjsText["``javascript
 chrome.runtime.sendMessage(Object, function(response) {
   // code here
 });
-```"]
+``"]
 
-backgroundjsText["```javascript
+backgroundjsText["\```javascript
 chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
   // code here
   sendResponse({...});
 });
-```"]
+\```"]
 
 contentjs --> contentjsText
 backgroundjs --> backgroundjsText
