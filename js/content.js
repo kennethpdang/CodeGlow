@@ -18,16 +18,13 @@ chrome.runtime.sendMessage({method: "shouldHighlight", host: location.host},
 
       allTextOnScreen = document.body.innerHTML;
 
-      /*
       // Replace matched text with styled text
       const highlightedText = allTextOnScreen.replace(regex, (match, p1) => {
         // Apply red color to the text between triple backticks
-        const highlightedCode = Prism.highlight(p1, Prism.languages.javascript);
-        return `<pre><code class="language-javascript"> ${highlightedCode} </code></pre>`;
+        return `<code class="language-javascript"> ${p1} </code>`;
       });
-      */
 
-      // document.body.innerHTML = highlightedText;
+      document.body.innerHTML = highlightedText;
     }
   }
 );
