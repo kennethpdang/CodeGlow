@@ -17,7 +17,7 @@ chrome.runtime.sendMessage({method: "shouldHighlight", host: location.host},
 
       document.head.appendChild(prismHighlightJavaScript);
       document.head.appendChild(prismHighlightCSS);
-      document.head.appendChild(customCSS)
+      document.head.appendChild(customCSS);
 
       // Regular expression to match text between ```
       const regex = /```([\s\S]*?)```/gm;

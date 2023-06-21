@@ -9,7 +9,7 @@
       "48": "/images/CodeGlow - Not Highlighted - 48.png",
       "128": "/images/CodeGlow - Not Highlighted - 128.png"
   },
-  "browser_action": {
+  "action": {
     "default_icon": {
       "16": "/images/CodeGlow - Not Highlighted - 16.png",
       "48": "/images/CodeGlow - Not Highlighted - 48.png",
@@ -17,6 +17,10 @@
     },
     "default_title": "CodeGlow"
   },
+  "permissions": [
+    "tabs",
+    "storage"
+  ],
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
@@ -30,7 +34,7 @@
   },
   "web_accessible_resources": [{
     "resources": ["js/prism/prism.css", "js/prism/prism.js", "js/custom.css"],
-    "matches": [],
+    "matches": ["<all_urls>"],
     "extension_ids": []
   }]
 }

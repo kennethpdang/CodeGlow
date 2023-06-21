@@ -9,26 +9,30 @@ function updateExtensionIcon(enabled) {
         "128": "/images/CodeGlow - Highlighted - 128.png"
     };
 
-    chrome.browserAction.setIcon({ path: iconPath });
+    chrome.action.setIcon({ path: iconPath });
 }
 
 function toggleExtensionEnabledState() {
-    const enabled = getOption('enabled');
+    // const enabled = getOption('enabled');
+    const enabled = true;
     updateExtensionIcon(enabled);
-    setOption('enabled', !enabled);
+    // setOption('enabled', !enabled);
 }
 
-chrome.browserAction.onClicked.addListener(function(tab) {
+chrome.action.onClicked.addListener((tab) => {
     toggleExtensionEnabledState();
 });
 
 function shouldHighlight(host) {
+    return true;
+    /*
     if (!getOption('enabled')) {
       return false;
     }
     else {
         return true;
     }
+    */
 }
 
 // Respond to request from the content script:
@@ -39,3 +43,35 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
       sendResponse({});
     }
 });
+
+/*
+var defaultOptions = {
+    enabled: true // Is extension currently on?
+};
+
+function getOption(optionName) {
+    for (var option in defaultOptions) {
+        if (!(option in chrome.storage.local)) {
+            chrome.storage.local.set = JSON.stringify(defaultOptions[option]); // Local storage for key / value pairs where key is option name and value is value of option.
+        }
+    }
+  
+    if (optionAllowed(optionName)) {
+        return JSON.parse(localStorage[optionName]);
+    } else {
+        throw "Option " + optionName + " not supported.";
+    }
+}
+
+function optionAllowed(optionName) {
+    return optionName in defaultOptions
+}
+
+function setOption(optionName, value) {
+    if (optionAllowed(optionName)) {
+        localStorage[optionName] = JSON.stringify(value);
+    } else {
+        throw "Option " + optionName + " not supported";
+    }
+  }
+  */
