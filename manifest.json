@@ -1,5 +1,5 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "CodeGlow",
   "version": "1.0",
   "author": "Kenneth Dang",
@@ -9,10 +9,6 @@
       "48": "/images/CodeGlow - Not Highlighted - 48.png",
       "128": "/images/CodeGlow - Not Highlighted - 128.png"
   },
-  "permissions": [
-    "activeTab",
-    "tabs"
-  ],
   "browser_action": {
     "default_icon": {
       "16": "/images/CodeGlow - Not Highlighted - 16.png",
@@ -30,8 +26,11 @@
     }
   ],
   "background": {
-    "scripts": ["js/background_script/background.js", "js/background_script/options.js"],
-    "persistent": true
+    "service_worker": "js/background_script/background.js"
   },
-  "web_accessible_resources" : ["js/prism/prism.css", "js/prism/prism.js"]
+  "web_accessible_resources": [{
+    "resources": ["js/prism/prism.css", "js/prism/prism.js", "js/custom.css"],
+    "matches": [],
+    "extension_ids": []
+  }]
 }
